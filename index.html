@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founderealm</title>
+<meta name="description" content="Founderealm is a sovereign business operating system. From one sentence about what you make or do, it builds your database, your workspace and your website, on a server you control.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://founderealm.com/">
+<meta property="og:title" content="Founderealm">
+<meta property="og:description" content="A business should own its infrastructure the way it owns its ovens, cameras and tools.">
+<meta property="og:image" content="https://founderealm.com/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#F3EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1622" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  /* Archivo, SIL Open Font License 1.1: fonts/OFL.txt */
+  @font-face {
+    font-family: "Archivo";
+    src: url("fonts/archivo-latin.woff2") format("woff2");
+    font-weight: 400 900;
+    font-stretch: 62% 125%;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  :root {
+    color-scheme: light dark;
+    --ground: #F3EFE6;
+    --card: #FFFFFF;
+    --sand: #E8E2D5;
+    --ink: #10202F;
+    --muted: #5B6672;
+    --link: #8A6414;
+    --line: #D3CCBD;
+    --rev-bg: #10202F;
+    --rev-ink: #F3EFE6;
+    --rev-muted: #B9C2CC;
+    --rev-link: #C9952B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0A1622;
+      --card: #10202F;
+      --sand: #15283A;
+      --ink: #F3EFE6;
+      --muted: #B9C2CC;
+      --link: #D9A63C;
+      --line: #22374B;
+      --rev-bg: #F3EFE6;
+      --rev-ink: #10202F;
+      --rev-muted: #5B6672;
+      --rev-link: #8A6414;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 "Archivo", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
+  a { color: var(--link); text-underline-offset: 0.2em; transition: color 0.2s; }
+  a:hover { color: var(--ink); }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+
+  .lockup { display: inline-flex; align-items: center; gap: 0.7rem; color: var(--ink); text-decoration: none; }
+  .lockup svg { width: 2.5rem; height: 2.5rem; }
+  .wordmark { font-weight: 800; font-stretch: 112%; letter-spacing: 0.06em; text-transform: uppercase; font-size: 1.25rem; }
+  header.wrap { padding-block: 1.75rem; }
+
+  .hero { padding-block: 4rem 4.5rem; }
+  .label { margin: 0; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  h1 {
+    margin: 1rem 0 0;
+    max-width: 24ch;
+    font-size: clamp(2rem, 3.6vw + 1rem, 4.25rem);
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+  }
+  .lead { margin: 1.5rem 0 0; max-width: 40ch; font-size: 1.3125rem; line-height: 1.5; color: var(--muted); }
+  .status { margin: 1.25rem 0 0; font-weight: 700; color: var(--link); }
+
+  .board { display: grid; gap: 1.25rem; padding-bottom: 4.5rem; }
+  @media (min-width: 720px) {
+    .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .wide { grid-column: span 2; }
+  }
+  @media (min-width: 1040px) { .board { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .panel { border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: flex-end; }
+  @media (min-width: 720px) { .panel { padding: 2rem; min-height: 15rem; } }
+  .panel h2 { margin: 0; font-size: clamp(1.5rem, 1vw + 1.1rem, 2rem); font-weight: 800; font-stretch: 108%; line-height: 1.1; letter-spacing: -0.01em; }
+  .panel p { margin: 0.75rem 0 0; max-width: 46ch; color: var(--muted); }
+  .card { background: var(--card); }
+  .sand { background: var(--sand); }
+  .reverse { background: var(--rev-bg); color: var(--rev-ink); justify-content: space-between; gap: 2rem; }
+  .reverse p { color: var(--rev-muted); }
+  .reverse a { color: var(--rev-link); font-weight: 700; }
+  .reverse a:hover { color: var(--rev-ink); }
+  .reverse svg { width: 3.5rem; height: 3.5rem; color: #C9952B; }
+  .get { display: inline-block; margin-top: 1.25rem; }
+
+  footer.wrap {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem;
+    padding-block: 1.75rem 2.5rem; border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--muted);
+  }
+  footer .lockup svg { width: 1.5rem; height: 1.5rem; }
+  footer .wordmark { font-size: 0.8125rem; }
+  footer nav { display: flex; gap: 1.25rem; }
+  footer nav a { color: var(--muted); }
+  footer nav a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="full-stack" viewBox="0 0 64 64"><path fill="currentColor" d="M14 41L46 38C51 43.4 51 49.7 45.6 53Q31 56.1 14 56C15.3 49.7 15.3 43.4 14 41Z M17 22.6L43 20C47.5 24.2 47.5 29.1 42.6 31.4Q31 34.3 17 34C18.3 29.1 18.3 24.2 17 22.6Z M20 5.2L40 3C44 6.9 44 11.45 39.6 13.8Q31 16.5 20 16C21.3 11.45 21.3 6.9 20 5.2Z"/></symbol>
+</svg>
+<header class="wrap">
+  <a class="lockup" href="/"><svg aria-hidden="true"><use href="#full-stack"/></svg><span class="wordmark">Founderealm</span></a>
+</header>
+<main>
+  <section class="hero wrap">
+    <p class="label">Sovereign business operating system</p>
+    <h1>A business should own its infrastructure the way it owns its ovens, cameras and tools.</h1>
+    <p class="lead">For people who make things or do things and have never touched a server.</p>
+    <p class="status">In alpha. Not released yet.</p>
+  </section>
+  <section class="board wrap" aria-label="What Founderealm does">
+    <div class="panel card wide">
+      <h2>From one sentence.</h2>
+      <p>Say what you make or do. Founderealm builds the business's database, the workspace you run it from, and its website, then puts the site on a server you control.</p>
+    </div>
+    <div class="panel sand">
+      <h2>You own the whole stack.</h2>
+      <p>Your site runs on a secured Ubuntu server that you own and operate from your own computer: a box at home, or space Founderealm will rent you for a small fee.</p>
+    </div>
+    <div class="panel sand">
+      <h2>No commission.</h2>
+      <p>No sale pays a commission. You take money your own way, straight from your own site.</p>
+    </div>
+    <div class="panel card wide">
+      <h2>Yours, on your computer.</h2>
+      <p>The business's data stays on your own computer. Any number of ventures run from one copy. No step should ask you for a terminal, a key or a server address; one that does is not finished.</p>
+    </div>
+    <div class="panel reverse wide">
+      <svg aria-hidden="true"><use href="#full-stack"/></svg>
+      <div>
+        <h2>Founderealm Lens is out now.</h2>
+        <p>The instrument we built to build Founderealm, on its own: your whole codebase as one SQL database for Claude&nbsp;Code and VS&nbsp;Code, in any language. In public beta.</p>
+        <a class="get" href="https://github.com/Founderealm/Founderealm_Lens">Get Lens</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">
+  <a class="lockup" href="/"><svg aria-hidden="true"><use href="#full-stack"/></svg><span class="wordmark">Founderealm</span></a>
+  <span>&copy; 2026 Founderealm</span>
+  <nav aria-label="Elsewhere"><a href="https://github.com/Founderealm">GitHub</a><a href="https://patreon.com/Founderealm">Patreon</a></nav>
+</footer>
+</body>
+</html>
